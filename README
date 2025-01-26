@@ -1,11 +1,11 @@
-1) You need firstly pull docker image of posgresql
+1) You need firstly pull docker image of posgresql and start it
 Here is a list of commands:
 
     docker pull postgres
 
     docker run --name postgres-container -e POSTGRES_USER=myuser -e POSTGRES_PASSWORD=mypassword -e POSTGRES_DB=mydb -p 5432:5432 -v pgdata:/var/lib/postgresql/data -d postgres
 
-2) Then you need to pull image of rabbitmq ans start it
+2) Then you need to pull image of rabbitmq and start it
 
     docker pull rabbitmq:management
 
