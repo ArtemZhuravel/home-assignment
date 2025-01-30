@@ -40,7 +40,6 @@ public class ObservedRepoScheduler {
                 repo.setStatus(ObservedRepoStatus.INVALID);
                 repoRepository.save(repo);
 
-                // Publish a notification for an invalid repo
                 notificationPublisher.publishNotification("Repository marked as INVALID: " + repo.getName() + " (" + repo.getOwner() + ")");
             }
         }
@@ -50,6 +49,6 @@ public class ObservedRepoScheduler {
         repo.setStars(gitHubRepoData.getStars());
         repo.setOpenIssues(gitHubRepoData.getOpenIssues());
         repo.setLicense(gitHubRepoData.getLicense());
-        repo.setStatus(ObservedRepoStatus.ACTIVE); // Ensure the status is ACTIVE after successful fetch
+        repo.setStatus(ObservedRepoStatus.ACTIVE);
     }
 }
